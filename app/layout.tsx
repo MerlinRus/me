@@ -59,7 +59,8 @@ export const metadata: Metadata = {
       "I build complete products: architecture, code, infrastructure, and production.",
     images: [
       {
-        url: "/og.png",
+        url: "/og-1200.png",
+        type: "image/png",
         width: 1200,
         height: 630,
         alt: "MAARK — Mark Pivovarov, AI engineer and DevOps",
@@ -71,7 +72,12 @@ export const metadata: Metadata = {
     title: "MAARK — AI developer + DevOps",
     description:
       "I build complete products: architecture, code, infrastructure, and production.",
-    images: ["/og.png"],
+    images: [
+      {
+        url: "/og-1200.png",
+        alt: "MAARK — Mark Pivovarov, AI engineer and DevOps",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -93,6 +99,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta
+          property="og:image:secure_url"
+          content="https://maark.ru/og-1200.png"
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
