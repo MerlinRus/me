@@ -31,6 +31,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mark Pivovarov", url: "https://maark.ru" }],
   creator: "Mark Pivovarov",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "128x128" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
   alternates: {
     canonical: "/",
   },

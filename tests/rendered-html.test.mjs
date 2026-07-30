@@ -32,5 +32,7 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /RentalAll/);
   assert.match(html, /QobuzSync/);
   assert.match(html, /@orysege/);
+  assert.match(html, /href="https:\/\/maark\.ru\/favicon\.ico"/);
+  assert.match(html, /href="https:\/\/maark\.ru\/favicon\.png"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
