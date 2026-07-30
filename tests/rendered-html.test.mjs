@@ -2,6 +2,40 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+function readJpegDimensions(image) {
+  assert.equal(image[0], 0xff);
+  assert.equal(image[1], 0xd8);
+
+  let offset = 2;
+
+  while (offset < image.length) {
+    if (image[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = image[offset + 1];
+    offset += 2;
+
+    if (marker === 0xd9 || marker === 0xda) {
+      break;
+    }
+
+    const segmentLength = image.readUInt16BE(offset);
+
+    if (marker === 0xc0) {
+      return {
+        height: image.readUInt16BE(offset + 3),
+        width: image.readUInt16BE(offset + 5),
+      };
+    }
+
+    offset += segmentLength;
+  }
+
+  assert.fail("social preview must use a baseline JPEG");
+}
+
 async function render() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -42,26 +76,25 @@ test("declares the real social preview dimensions", async () => {
   const response = await render();
   const html = await response.text();
   const image = await readFile(
-    new URL("../public/og-1200.png", import.meta.url),
+    new URL("../public/og-telegram-v2.jpg", import.meta.url),
   );
 
   assert.match(
     html,
-    /property="og:image" content="https:\/\/maark\.ru\/og-1200\.png"/,
+    /property="og:image" content="https:\/\/maark\.ru\/og-telegram-v2\.jpg"/,
   );
   assert.match(
     html,
-    /property="og:image:secure_url" content="https:\/\/maark\.ru\/og-1200\.png"/,
+    /property="og:image:secure_url" content="https:\/\/maark\.ru\/og-telegram-v2\.jpg"/,
   );
-  assert.match(html, /property="og:image:type" content="image\/png"/);
-  assert.deepEqual(
-    [...image.subarray(1, 4)],
-    [0x50, 0x4e, 0x47],
-    "social preview must be a PNG",
+  assert.match(html, /property="og:image:type" content="image\/jpeg"/);
+  assert.ok(
+    image.length < 250_000,
+    `social preview is too large: ${image.length} bytes`,
   );
 
-  const actualWidth = image.readUInt32BE(16);
-  const actualHeight = image.readUInt32BE(20);
+  const { width: actualWidth, height: actualHeight } =
+    readJpegDimensions(image);
   const declaredWidth = Number(
     html.match(/property="og:image:width" content="(\d+)"/)?.[1],
   );
