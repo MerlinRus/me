@@ -66,6 +66,10 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /<title>MAARK — AI-разработчик и DevOps<\/title>/i);
   assert.match(html, /RentalAll/);
   assert.match(html, /QobuzSync/);
+  assert.match(html, /ПрофиРем/);
+  assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);
+  assert.equal((html.match(/class="project-card"/g) ?? []).length, 3);
+  assert.doesNotMatch(html, /Два проекта/);
   assert.match(html, /@orysege/);
   assert.match(html, /href="https:\/\/maark\.ru\/favicon\.ico"/);
   assert.match(html, /href="https:\/\/maark\.ru\/favicon\.png"/);

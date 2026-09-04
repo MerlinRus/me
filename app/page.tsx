@@ -47,7 +47,7 @@ const copy = {
     projectsKicker: "02 — Избранные проекты",
     projectsTitle: "Продукты, а не учебные демо.",
     projectsIntro:
-      "Два проекта в нишах, где готового решения было недостаточно — поэтому я собрал своё.",
+      "Веб-продукты и сайты для конкретных задач: от автоматизации сервисов до заявок для бизнеса.",
     projects: [
       {
         number: "01",
@@ -68,6 +68,16 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Открыть продукт",
+      },
+      {
+        number: "03",
+        type: "Business website",
+        title: "ПрофиРем",
+        headline: "От знакомства с мастером до заявки.",
+        text: "Сайт-визитка сантехника в Кирове: информация о мастере, услуги и примеры работ. Форма заявки помогает посетителю описать задачу и оставить контакты для связи.",
+        stack: ["HTML", "CSS", "JavaScript"],
+        link: "https://profirem-kirov.ru/",
+        linkText: "Открыть сайт",
       },
     ],
     stackKicker: "03 — Технологии",
@@ -152,7 +162,7 @@ const copy = {
     projectsKicker: "02 — Selected work",
     projectsTitle: "Products, not tutorial demos.",
     projectsIntro:
-      "Two products in spaces where an off-the-shelf answer was not enough — so I built one.",
+      "Web products and websites built for specific needs: from service automation to business enquiries.",
     projects: [
       {
         number: "01",
@@ -173,6 +183,16 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Open product",
+      },
+      {
+        number: "03",
+        type: "Business website",
+        title: "ProfiRem",
+        headline: "From meeting the plumber to making an enquiry.",
+        text: "A business website for a plumber in Kirov, introducing the specialist, services, and examples of completed work. An enquiry form lets visitors describe their needs and leave contact details.",
+        stack: ["HTML", "CSS", "JavaScript"],
+        link: "https://profirem-kirov.ru/",
+        linkText: "Visit website",
       },
     ],
     stackKicker: "03 — Technology",
