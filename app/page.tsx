@@ -21,7 +21,7 @@ const copy = {
     portraitLabel: "Марк Пивоваров",
     portraitRole: "Инженер полного цикла",
     portraitMeta: "Россия · UTC+3",
-    signal: "Код / инфраструктура / AI / продукт",
+    signal: ["Код", "Инфраструктура", "AI", "Продукт", "Backend", "Frontend", "DevOps", "Автоматизация"],
     introKicker: "01 — Чем занимаюсь",
     introTitle: "Не просто пишу код.",
     introAccent: "Закрываю систему.",
@@ -136,7 +136,7 @@ const copy = {
     portraitLabel: "Mark Pivovarov",
     portraitRole: "Full-cycle engineer",
     portraitMeta: "Russia · UTC+3",
-    signal: "Code / infrastructure / AI / product",
+    signal: ["Code", "Infrastructure", "AI", "Product", "Backend", "Frontend", "DevOps", "Automation"],
     introKicker: "01 — What I do",
     introTitle: "I do more than code.",
     introAccent: "I close the whole system.",
@@ -343,13 +343,19 @@ export default function Home() {
       </section>
 
       <div className="signal-strip" aria-hidden="true">
-        <div>
-          <span>{t.signal}</span>
-          <b>✳</b>
-          <span>{t.signal}</span>
-          <b>✳</b>
-          <span>{t.signal}</span>
-          <b>✳</b>
+        <div className="signal-track">
+          {[0, 1].map((group) => (
+            <div className="signal-group" key={group}>
+              {[...t.signal, ...t.signal].map((label, index) => (
+                <span className="signal-item" key={`${label}-${index}`}>
+                  {label}
+                  <svg className="signal-separator" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" focusable="false">
+                    <path d="M8 1v14M2 4.5l12 7M2 11.5l12-7" />
+                  </svg>
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 

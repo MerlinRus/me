@@ -82,6 +82,17 @@ test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 14);
 });
 
+test("renders two identical ticker groups with the extended skill labels", async () => {
+  const html = await (await render()).text();
+  const groups = [...html.matchAll(/<div class="signal-group">(.*?)<\/div>/g)];
+  assert.equal(groups.length, 2);
+  assert.equal(groups[0][1], groups[1][1]);
+  for (const label of ["Код", "Инфраструктура", "AI", "Продукт", "Backend", "Frontend", "DevOps", "Автоматизация"]) {
+    assert.ok(groups[0][1].includes(label), `missing ticker label: ${label}`);
+  }
+  assert.doesNotMatch(groups[0][1], /✳/u);
+});
+
 test("declares the real social preview dimensions", async () => {
   const response = await render();
   const html = await response.text();

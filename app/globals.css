@@ -412,17 +412,35 @@ main {
   white-space: nowrap;
 }
 
-.signal-strip > div {
+.signal-track {
   display: flex;
   width: max-content;
   align-items: center;
-  gap: 3rem;
-  animation: ticker 18s linear infinite;
+  animation: ticker 40s linear infinite;
 }
 
-.signal-strip b {
+.signal-group {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 100cqw;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  padding-inline-end: 3rem;
+}
+
+.signal-item {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.signal-separator {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
   color: var(--signal);
-  font-size: 1rem;
 }
 
 .section {
@@ -886,7 +904,7 @@ footer p {
 
 @keyframes ticker {
   to {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
 }
 
@@ -1145,6 +1163,10 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .signal-track {
+    animation: none;
   }
 
   *,
