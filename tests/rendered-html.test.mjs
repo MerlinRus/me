@@ -65,6 +65,8 @@ test("server-renders the MAARK portfolio", async () => {
   const html = await response.text();
   assert.match(html, /<title>MAARK — AI-разработчик и DevOps<\/title>/i);
   assert.match(html, /RentalAll/);
+  assert.match(html, /href="https:\/\/rentalall\.ru\/"/);
+  assert.doesNotMatch(html, /dev\.rentalall\.ru/);
   assert.match(html, /QobuzSync/);
   assert.match(html, /ПрофиРем/);
   assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);

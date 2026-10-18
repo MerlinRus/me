@@ -56,7 +56,7 @@ const copy = {
         headline: "Аренда площадки без ручной рутины.",
         text: "Платформа для поиска и полностью автоматизированного бронирования площадок для мероприятий — единый путь от выбора до аренды.",
         stack: ["Python", "DRF", "Django ORM", "PostgreSQL", "Redis", "React", "Grafana", "RabbitMQ", "ЮКасса", "OTP", "2FA", "SMTP/IMAP"],
-        link: "https://dev.rentalall.ru",
+        link: "https://rentalall.ru/",
         linkText: "Открыть продукт",
       },
       {
@@ -171,7 +171,7 @@ const copy = {
         headline: "Venue rental without the manual overhead.",
         text: "A platform for discovering and fully automating the booking of event venues — one path from selection to rental.",
         stack: ["Python", "DRF", "Django ORM", "PostgreSQL", "Redis", "React", "Grafana", "RabbitMQ", "YooKassa", "OTP", "2FA", "SMTP/IMAP"],
-        link: "https://dev.rentalall.ru",
+        link: "https://rentalall.ru/",
         linkText: "Open product",
       },
       {
