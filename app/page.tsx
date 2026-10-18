@@ -237,6 +237,32 @@ const copy = {
 
 type Language = keyof typeof copy;
 
+function ArrowIcon({ direction = "up-right" }: {
+  direction?: "up-right" | "down" | "down-right";
+}) {
+  const paths = {
+    "up-right": "M7 17 17 7M7 7h10v10",
+    down: "M12 5v14m-7-7 7 7 7-7",
+    "down-right": "M7 7l10 10M7 17h10V7",
+  };
+
+  return (
+    <svg
+      className="arrow-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d={paths[direction]} />
+    </svg>
+  );
+}
+
 export default function Home() {
   const [language, setLanguage] = useState<Language>("ru");
   const t = copy[language];
@@ -289,11 +315,11 @@ export default function Home() {
             <div className="hero-actions">
               <a className="button button-primary" href="https://t.me/orysege" target="_blank" rel="noreferrer">
                 {t.discuss}
-                <span aria-hidden="true">↗</span>
+                <ArrowIcon />
               </a>
               <a className="text-link" href="#work">
                 {t.seeWork}
-                <span aria-hidden="true">↓</span>
+                <ArrowIcon direction="down" />
               </a>
             </div>
           </div>
@@ -345,7 +371,7 @@ export default function Home() {
               <span className="service-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
-              <div className="card-arrow" aria-hidden="true">↘</div>
+              <div className="card-arrow" aria-hidden="true"><ArrowIcon direction="down-right" /></div>
             </article>
           ))}
         </div>
@@ -377,7 +403,7 @@ export default function Home() {
                 </ul>
                 <a href={project.link} target="_blank" rel="noreferrer">
                   {project.linkText}
-                  <span aria-hidden="true">↗</span>
+                  <ArrowIcon />
                 </a>
               </div>
             </article>
@@ -426,7 +452,7 @@ export default function Home() {
             <br />
             <em>{t.contactTitleTwo}</em>
           </h2>
-          <span aria-hidden="true">↘</span>
+          <span aria-hidden="true"><ArrowIcon direction="down-right" /></span>
         </div>
         <div className="contact-bottom">
           <p>{t.contactText}</p>
@@ -434,17 +460,17 @@ export default function Home() {
             <a className="contact-primary" href="https://t.me/orysege" target="_blank" rel="noreferrer">
               <span>Telegram</span>
               <strong>@orysege</strong>
-              <i aria-hidden="true">↗</i>
+              <ArrowIcon />
             </a>
             <a href="mailto:pivovarof.marck@gmail.com">
               <span>{t.email}</span>
               <strong>pivovarof.marck@gmail.com</strong>
-              <i aria-hidden="true">↗</i>
+              <ArrowIcon />
             </a>
             <a href="mailto:pivovarov.marck@yandex.ru">
               <span>{t.secondaryEmail}</span>
               <strong>pivovarov.marck@yandex.ru</strong>
-              <i aria-hidden="true">↗</i>
+              <ArrowIcon />
             </a>
           </div>
         </div>
@@ -457,8 +483,8 @@ export default function Home() {
         </div>
         <p>{t.made}</p>
         <div className="footer-links">
-          <a href="https://github.com/MerlinRus" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://t.me/orysege" target="_blank" rel="noreferrer">Telegram ↗</a>
+          <a href="https://github.com/MerlinRus" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
+          <a href="https://t.me/orysege" target="_blank" rel="noreferrer">Telegram <ArrowIcon /></a>
           <span>© {new Date().getFullYear()} Mark Pivovarov</span>
         </div>
       </footer>

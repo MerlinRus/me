@@ -76,6 +76,12 @@ test("server-renders the MAARK portfolio", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
+test("renders arrow icons as SVG instead of emoji-capable text", async () => {
+  const html = await (await render()).text();
+  assert.doesNotMatch(html, /[↗↘↓]/u);
+  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 14);
+});
+
 test("declares the real social preview dimensions", async () => {
   const response = await render();
   const html = await response.text();

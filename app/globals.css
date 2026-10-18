@@ -58,9 +58,15 @@ button {
 main {
   container-type: inline-size;
   width: 100%;
-  max-width: 112rem;
-  margin-inline: auto;
   overflow: hidden;
+}
+
+.arrow-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 /* Let grid/flex content shrink with the viewport, including long RU/EN copy. */
@@ -825,10 +831,6 @@ main {
   font-weight: 550;
 }
 
-.contact-links i {
-  font-style: normal;
-}
-
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -863,6 +865,12 @@ footer p {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
 }
 
 @keyframes rise {
