@@ -9,6 +9,8 @@
   --signal: #ff4d36;
   --font-sans: var(--font-geist-sans), Arial, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
+  --page-gutter: clamp(1.1rem, 3.25cqw, 4rem);
+  --header-height: 5.25rem;
 }
 
 * {
@@ -16,6 +18,7 @@
 }
 
 html {
+  font-size: clamp(1rem, calc(0.5rem + 0.5vw), 1.5rem);
   scroll-behavior: smooth;
   background: var(--ink);
 }
@@ -25,7 +28,7 @@ body {
   background: var(--ink);
   color: var(--paper);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 1rem;
   text-rendering: optimizeLegibility;
 }
 
@@ -53,8 +56,26 @@ button {
 }
 
 main {
-  min-width: 320px;
+  container-type: inline-size;
+  width: 100%;
+  max-width: 112rem;
+  margin-inline: auto;
   overflow: hidden;
+}
+
+/* Let grid/flex content shrink with the viewport, including long RU/EN copy. */
+.hero-main,
+.hero-bottom > *,
+.section-heading > *,
+.projects-heading > *,
+.project-card > *,
+.stack-section > *,
+.stack-row > *,
+.fit-layout > *,
+.fit-cards article > *,
+.contact-bottom > *,
+.contact-links a > * {
+  min-width: 0;
 }
 
 .site-header {
@@ -63,8 +84,8 @@ main {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  min-height: 84px;
-  padding: 0 3.25vw;
+  min-height: var(--header-height);
+  padding: 0 var(--page-gutter);
   border-bottom: 1px solid var(--line);
   background: rgba(11, 11, 12, 0.92);
   backdrop-filter: blur(16px);
@@ -152,15 +173,15 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.58fr) minmax(300px, 0.72fr);
-  min-height: calc(100svh - 84px);
+  grid-template-columns: minmax(0, 1.58fr) minmax(18.75rem, 0.72fr);
+  min-height: min(calc(100svh - var(--header-height)), 56rem);
 }
 
 .hero-main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(3.5rem, 6.4vw, 7rem) 4.2vw 3.25rem 3.25vw;
+  padding: clamp(3.5rem, 6.4cqw, 7rem) 4.2cqw 3.25rem var(--page-gutter);
 }
 
 .eyebrow,
@@ -183,7 +204,7 @@ main {
 
 .hero h1 {
   margin: 2.4rem 0;
-  font-size: clamp(4.6rem, 10.3vw, 10.7rem);
+  font-size: clamp(4.6rem, 10.3cqw, 10.7rem);
   font-weight: 650;
   letter-spacing: -0.085em;
   line-height: 0.74;
@@ -197,12 +218,12 @@ main {
 }
 
 .hero h1 span:nth-child(2) {
-  margin-left: 8vw;
+  margin-left: 8cqw;
   animation-delay: 80ms;
 }
 
 .hero h1 span:nth-child(3) {
-  margin-left: 2vw;
+  margin-left: 2cqw;
   color: var(--acid);
   animation-delay: 160ms;
 }
@@ -214,16 +235,16 @@ main {
 
 .hero-bottom {
   display: grid;
-  grid-template-columns: minmax(260px, 560px) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(12.8125rem, 0.65fr);
   align-items: end;
   gap: 2rem;
 }
 
 .hero-copy {
-  max-width: 610px;
+  max-width: 38rem;
   margin: 0;
   color: #c7c5be;
-  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.45cqw, 1.45rem);
   line-height: 1.45;
 }
 
@@ -232,7 +253,7 @@ main {
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  min-width: 205px;
+  min-width: 0;
 }
 
 .button {
@@ -272,13 +293,13 @@ main {
 
 .identity-card {
   position: relative;
-  min-height: 560px;
+  min-height: 35rem;
   border-left: 1px solid var(--line);
   background:
     linear-gradient(rgba(241, 239, 231, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(241, 239, 231, 0.055) 1px, transparent 1px),
     #121214;
-  background-size: 52px 52px;
+  background-size: 3.25rem 3.25rem;
 }
 
 .identity-grid {
@@ -293,7 +314,7 @@ main {
   position: relative;
   z-index: 1;
   color: var(--acid);
-  font-size: clamp(15rem, 29vw, 32rem);
+  font-size: clamp(15rem, 29cqw, 32rem);
   font-weight: 800;
   letter-spacing: -0.13em;
   line-height: 0.7;
@@ -399,14 +420,14 @@ main {
 }
 
 .section {
-  padding: clamp(5.5rem, 10vw, 10rem) 3.25vw;
+  padding: clamp(5.5rem, 10cqw, 10rem) var(--page-gutter);
 }
 
 .section-heading {
   display: grid;
-  grid-template-columns: minmax(160px, 0.5fr) 1.5fr;
+  grid-template-columns: minmax(10rem, 0.5fr) minmax(0, 1.5fr);
   gap: 3rem;
-  margin-bottom: clamp(4rem, 7vw, 7rem);
+  margin-bottom: clamp(4rem, 7cqw, 7rem);
 }
 
 .section-heading h2,
@@ -415,7 +436,7 @@ main {
 .fit-layout > h2,
 .contact-title h2 {
   margin: 0;
-  font-size: clamp(3rem, 6vw, 6.8rem);
+  font-size: clamp(3rem, 6cqw, 6.8rem);
   font-weight: 600;
   letter-spacing: -0.07em;
   line-height: 0.94;
@@ -428,23 +449,23 @@ main {
 }
 
 .section-heading > div > p {
-  max-width: 720px;
+  max-width: 45rem;
   margin: 2.5rem 0 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  font-size: clamp(1rem, 1.4cqw, 1.35rem);
   line-height: 1.5;
 }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .service-card {
   position: relative;
-  min-height: 360px;
+  min-height: 22.5rem;
   padding: 1.6rem;
   border-right: 1px solid var(--line);
   transition: background 220ms ease, color 220ms ease;
@@ -466,16 +487,16 @@ main {
 }
 
 .service-card h3 {
-  max-width: 330px;
+  max-width: 20.625rem;
   margin: 7rem 0 1.4rem;
-  font-size: clamp(1.55rem, 2.3vw, 2.5rem);
+  font-size: clamp(1.55rem, 2.3cqw, 2.5rem);
   font-weight: 550;
   letter-spacing: -0.05em;
   line-height: 1;
 }
 
 .service-card p {
-  max-width: 390px;
+  max-width: 24.375rem;
   margin: 0;
   color: var(--muted);
   line-height: 1.55;
@@ -504,7 +525,7 @@ main {
 
 .projects-heading {
   display: grid;
-  grid-template-columns: 0.55fr 1.1fr 0.8fr;
+  grid-template-columns: minmax(9rem, 0.4fr) minmax(0, 1.15fr) minmax(0, 1fr);
   align-items: end;
   gap: 3rem;
   margin-bottom: 5rem;
@@ -516,7 +537,7 @@ main {
 }
 
 .projects-heading > p:last-child {
-  max-width: 500px;
+  max-width: 31.25rem;
   margin: 0;
   color: #65645e;
   font-size: 1.08rem;
@@ -529,9 +550,9 @@ main {
 
 .project-card {
   display: grid;
-  grid-template-columns: 0.55fr 1.1fr 0.8fr;
+  grid-template-columns: minmax(9rem, 0.4fr) minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 3rem;
-  min-height: 430px;
+  min-height: 26.875rem;
   padding: 2rem 0 2.5rem;
   border-bottom: 1px solid rgba(11, 11, 12, 0.22);
 }
@@ -562,16 +583,16 @@ main {
 
 .project-name h3 {
   margin: 0;
-  font-size: clamp(3.5rem, 7.5vw, 8.5rem);
+  font-size: clamp(3.5rem, 7cqw, 7.5rem);
   font-weight: 650;
   letter-spacing: -0.09em;
   line-height: 0.85;
 }
 
 .project-name p {
-  max-width: 480px;
+  max-width: 30rem;
   margin: 2rem 0 0;
-  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 2cqw, 2rem);
   letter-spacing: -0.04em;
   line-height: 1.15;
 }
@@ -627,8 +648,8 @@ main {
 
 .stack-section {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 7vw;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 7cqw;
 }
 
 .stack-intro {
@@ -640,7 +661,7 @@ main {
 }
 
 .stack-intro > p:last-child {
-  max-width: 530px;
+  max-width: 33.125rem;
   margin: 2rem 0 0;
   color: var(--muted);
   font-size: 1.05rem;
@@ -682,13 +703,13 @@ main {
 
 .fit-layout {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 7vw;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 7cqw;
   margin-top: 3.5rem;
 }
 
 .fit-layout > h2 {
-  max-width: 750px;
+  max-width: 46.875rem;
 }
 
 .fit-cards {
@@ -697,7 +718,7 @@ main {
 
 .fit-cards article {
   display: grid;
-  grid-template-columns: 52px 0.55fr 1fr;
+  grid-template-columns: 3.25rem minmax(0, 0.55fr) minmax(0, 1fr);
   gap: 1.5rem;
   padding: 1.7rem 0;
   border-bottom: 1px solid var(--line);
@@ -725,7 +746,7 @@ main {
 }
 
 .contact-section {
-  padding: clamp(5rem, 9vw, 9rem) 3.25vw 2.5rem;
+  padding: clamp(5rem, 9cqw, 9rem) var(--page-gutter) 2.5rem;
   background: var(--acid);
   color: var(--ink);
 }
@@ -743,8 +764,8 @@ main {
 }
 
 .contact-title h2 {
-  max-width: 1050px;
-  font-size: clamp(4rem, 10vw, 11rem);
+  max-width: 65.625rem;
+  font-size: clamp(4rem, 10cqw, 11rem);
   line-height: 0.8;
 }
 
@@ -754,21 +775,21 @@ main {
 }
 
 .contact-title > span {
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3rem, 7cqw, 7rem);
 }
 
 .contact-bottom {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 7vw;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 7cqw;
   border-top: 1px solid rgba(11, 11, 12, 0.35);
   padding-top: 2rem;
 }
 
 .contact-bottom > p {
-  max-width: 560px;
+  max-width: 35rem;
   margin: 0;
-  font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.6cqw, 1.45rem);
   line-height: 1.5;
 }
 
@@ -800,7 +821,7 @@ main {
 
 .contact-links strong {
   overflow-wrap: anywhere;
-  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.4cqw, 1.1rem);
   font-weight: 550;
 }
 
@@ -813,7 +834,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: end;
   gap: 2rem;
-  padding: 2.5rem 3.25vw;
+  padding: 2.5rem var(--page-gutter);
 }
 
 footer > div:first-child {
@@ -868,6 +889,38 @@ footer p {
   }
 }
 
+@media (min-width: 1600px) {
+  .desktop-nav,
+  .availability,
+  .language-switch button,
+  .eyebrow,
+  .kicker,
+  .button,
+  .text-link,
+  .identity-caption,
+  .signal-strip,
+  .service-number,
+  .project-index,
+  .project-details a,
+  .stack-row > span:first-child,
+  .fit-cards span,
+  .contact-links span,
+  footer span,
+  footer p,
+  .footer-links {
+    font-size: 0.8125rem;
+  }
+
+  .project-details li {
+    font-size: 0.75rem;
+  }
+
+  .language-switch button {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+}
+
 @media (max-width: 1100px) {
   .site-header {
     grid-template-columns: 1fr auto;
@@ -878,11 +931,11 @@ footer p {
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero-main {
-    min-height: calc(100svh - 84px);
+    min-height: min(calc(100svh - var(--header-height)), 56rem);
   }
 
   .identity-card {
@@ -893,7 +946,7 @@ footer p {
 
   .projects-heading,
   .project-card {
-    grid-template-columns: 0.35fr 1.1fr;
+    grid-template-columns: minmax(0, 0.35fr) minmax(0, 1.1fr);
   }
 
   .projects-heading > p:last-child,
@@ -933,7 +986,7 @@ footer p {
 
   .hero h1 {
     margin: 3rem 0;
-    font-size: clamp(3.9rem, 21vw, 7.5rem);
+    font-size: clamp(3.5rem, 18vw, 7.5rem);
     line-height: 0.8;
   }
 
@@ -1013,7 +1066,7 @@ footer p {
   }
 
   .project-name h3 {
-    font-size: clamp(3.6rem, 20vw, 6rem);
+    font-size: clamp(3rem, 18vw, 6rem);
   }
 
   .project-name p {
