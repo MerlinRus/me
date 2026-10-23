@@ -70,7 +70,12 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /QobuzSync/);
   assert.match(html, /ПрофиРем/);
   assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);
-  assert.equal((html.match(/class="project-card"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="project-card"/g) ?? []).length, 4);
+  assert.match(html, /После дождя/);
+  assert.match(html, /href="https:\/\/city\.maark\.ru\/"/);
+  assert.match(html, /href="https:\/\/github\.com\/MerlinRus\/SilentCity"/);
+  assert.match(html, /Web Audio API/);
+  assert.match(html, /Open-Meteo/);
   assert.doesNotMatch(html, /Два проекта/);
   assert.match(html, /@orysege/);
   assert.match(html, /href="https:\/\/maark\.ru\/favicon\.ico"/);
@@ -81,7 +86,7 @@ test("server-renders the MAARK portfolio", async () => {
 test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   const html = await (await render()).text();
   assert.doesNotMatch(html, /[↗↘↓]/u);
-  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 14);
+  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 16);
 });
 
 test("renders two identical ticker groups with the extended skill labels", async () => {

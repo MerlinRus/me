@@ -670,6 +670,11 @@ main {
   color: var(--signal);
 }
 
+.project-details a + a {
+  margin-top: 0;
+  border-top: 0;
+}
+
 .stack-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);

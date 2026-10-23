@@ -79,6 +79,18 @@ const copy = {
         link: "https://profirem-kirov.ru/",
         linkText: "Открыть сайт",
       },
+      {
+        number: "04",
+        type: "SilentCity · Digital refuge",
+        title: "После дождя",
+        headline: "Город, в котором можно замедлиться.",
+        text: "Интерактивный SVG-город: дождь, тёплый свет окон и записки жителей. Погода и время суток меняются по выбранному городу. Микшер из 30 звуков, живое радио пяти жанров, личный блокнот и таймер помогают собрать свою атмосферу. На телефоне можно исследовать улицы без интерфейса; анимации учитывают уменьшение движения.",
+        stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
+        link: "https://city.maark.ru/",
+        linkText: "Открыть город",
+        sourceLink: "https://github.com/MerlinRus/SilentCity",
+        sourceText: "GitHub · SilentCity",
+      },
     ],
     stackKicker: "03 — Технологии",
     stackTitle: "Подбираю инструменты под задачу.",
@@ -193,6 +205,18 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
         linkText: "Visit website",
+      },
+      {
+        number: "04",
+        type: "SilentCity · Digital refuge",
+        title: "After the rain",
+        headline: "A city where you can slow down.",
+        text: "An interactive SVG city with rain, warmly lit windows, and notes from its residents. Weather and the day–night cycle follow your chosen city. Mix 30 ambient sounds, tune into five live radio genres, or settle in with a personal notebook and focus timer. Explore the streets without the interface on mobile; animations respect reduced motion.",
+        stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
+        link: "https://city.maark.ru/",
+        linkText: "Explore the city",
+        sourceLink: "https://github.com/MerlinRus/SilentCity",
+        sourceText: "GitHub · SilentCity",
       },
     ],
     stackKicker: "03 — Technology",
@@ -411,6 +435,12 @@ export default function Home() {
                   {project.linkText}
                   <ArrowIcon />
                 </a>
+                {"sourceLink" in project && (
+                  <a href={project.sourceLink} target="_blank" rel="noreferrer">
+                    {project.sourceText}
+                    <ArrowIcon />
+                  </a>
+                )}
               </div>
             </article>
           ))}
