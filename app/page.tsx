@@ -13,7 +13,7 @@ const copy = {
     eyebrow: "AI-разработчик · DevOps · Product engineer",
     heroLineOne: "Создаю",
     heroLineTwo: "системы",
-    heroLineThree: "целиком.",
+    heroLineThree: "целиком",
     heroText:
       "От идеи и архитектуры до production-сервера. Беру сложную техническую задачу и превращаю её в продукт, которым можно пользоваться.",
     discuss: "Обсудить задачу",
@@ -23,8 +23,8 @@ const copy = {
     portraitMeta: "Россия · UTC+3",
     signal: ["Код", "Инфраструктура", "AI", "Продукт", "Backend", "Frontend", "DevOps", "Автоматизация"],
     introKicker: "01 — Чем занимаюсь",
-    introTitle: "Не просто пишу код.",
-    introAccent: "Закрываю систему.",
+    introTitle: "Не просто пишу код",
+    introAccent: "Закрываю систему",
     introText:
       "Соединяю backend, frontend, инфраструктуру и AI-инструменты. Поэтому решения не рассыпаются на границах между командами и доходят до работающего production.",
     services: [
@@ -45,7 +45,7 @@ const copy = {
       },
     ],
     projectsKicker: "02 — Избранные проекты",
-    projectsTitle: "Продукты, а не учебные демо.",
+    projectsTitle: "Продукты, а не учебные демо",
     projectsIntro:
       "Веб-продукты и сайты для конкретных задач: от автоматизации сервисов до заявок для бизнеса.",
     projects: [
@@ -53,7 +53,7 @@ const copy = {
         number: "01",
         type: "Booking platform",
         title: "RentalAll",
-        headline: "Аренда площадки без ручной рутины.",
+        headline: "Аренда площадки без ручной рутины",
         text: "Платформа для поиска и полностью автоматизированного бронирования площадок для мероприятий — единый путь от выбора до аренды.",
         stack: ["Python", "DRF", "Django ORM", "PostgreSQL", "Redis", "React", "Grafana", "RabbitMQ", "ЮКасса", "OTP", "2FA", "SMTP/IMAP"],
         link: "https://rentalall.ru/",
@@ -63,7 +63,7 @@ const copy = {
         number: "02",
         type: "Open-source service",
         title: "QobuzSync",
-        headline: "Музыка не должна запирать вас внутри сервиса.",
+        headline: "Музыка не должна запирать вас внутри сервиса",
         text: "Бесплатный open-source сервис для переноса треков между Яндекс Музыкой и Qobuz — без ручного пересоздания медиатеки.",
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
@@ -73,7 +73,7 @@ const copy = {
         number: "03",
         type: "Business website",
         title: "ПрофиРем",
-        headline: "От знакомства с мастером до заявки.",
+        headline: "От знакомства с мастером до заявки",
         text: "Сайт-визитка сантехника в Кирове: информация о мастере, услуги и примеры работ. Форма заявки помогает посетителю описать задачу и оставить контакты для связи.",
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
@@ -83,7 +83,7 @@ const copy = {
         number: "04",
         type: "SilentCity · Digital refuge",
         title: "После дождя",
-        headline: "Город, в котором можно замедлиться.",
+        headline: "Город, в котором можно замедлиться",
         text: "Интерактивный SVG-город: дождь, тёплый свет окон и записки жителей. Погода и время суток меняются по выбранному городу. Микшер из 30 звуков, живое радио пяти жанров, личный блокнот и таймер помогают собрать свою атмосферу. На телефоне можно исследовать улицы без интерфейса; анимации учитывают уменьшение движения.",
         stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
         link: "https://city.maark.ru/",
@@ -93,7 +93,7 @@ const copy = {
       },
     ],
     stackKicker: "03 — Технологии",
-    stackTitle: "Подбираю инструменты под задачу.",
+    stackTitle: "Подбираю инструменты под задачу",
     stackText:
       "Не продаю модный стек. Выбираю технологии, которые помогают быстрее запустить продукт и спокойно развивать его дальше.",
     stackGroups: [
@@ -104,7 +104,7 @@ const copy = {
       { label: "AI", items: "LLM · Agents · Automation · Integrations" },
     ],
     fitKicker: "04 — Как работаем",
-    fitTitle: "Лучший результат начинается с ясных правил.",
+    fitTitle: "Лучший результат начинается с ясных правил",
     fitCards: [
       {
         title: "Содержательное ТЗ",
@@ -140,7 +140,7 @@ const copy = {
     eyebrow: "AI developer · DevOps · Product engineer",
     heroLineOne: "I build",
     heroLineTwo: "complete",
-    heroLineThree: "systems.",
+    heroLineThree: "systems",
     heroText:
       "From the first architectural decision to the production server. I turn difficult technical problems into products people can actually use.",
     discuss: "Discuss a project",
@@ -150,8 +150,8 @@ const copy = {
     portraitMeta: "Russia · UTC+3",
     signal: ["Code", "Infrastructure", "AI", "Product", "Backend", "Frontend", "DevOps", "Automation"],
     introKicker: "01 — What I do",
-    introTitle: "I do more than code.",
-    introAccent: "I close the whole system.",
+    introTitle: "I do more than code",
+    introAccent: "I close the whole system",
     introText:
       "I connect backend, frontend, infrastructure, and AI tooling. The result survives the gaps between disciplines and makes it all the way to production.",
     services: [
@@ -172,7 +172,7 @@ const copy = {
       },
     ],
     projectsKicker: "02 — Selected work",
-    projectsTitle: "Products, not tutorial demos.",
+    projectsTitle: "Products, not tutorial demos",
     projectsIntro:
       "Web products and websites built for specific needs: from service automation to business enquiries.",
     projects: [
@@ -180,7 +180,7 @@ const copy = {
         number: "01",
         type: "Booking platform",
         title: "RentalAll",
-        headline: "Venue rental without the manual overhead.",
+        headline: "Venue rental without the manual overhead",
         text: "A platform for discovering and fully automating the booking of event venues — one path from selection to rental.",
         stack: ["Python", "DRF", "Django ORM", "PostgreSQL", "Redis", "React", "Grafana", "RabbitMQ", "YooKassa", "OTP", "2FA", "SMTP/IMAP"],
         link: "https://rentalall.ru/",
@@ -190,7 +190,7 @@ const copy = {
         number: "02",
         type: "Open-source service",
         title: "QobuzSync",
-        headline: "Your music should not lock you into one service.",
+        headline: "Your music should not lock you into one service",
         text: "A free, open-source service for moving tracks between Yandex Music and Qobuz without rebuilding a library by hand.",
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
@@ -200,7 +200,7 @@ const copy = {
         number: "03",
         type: "Business website",
         title: "ProfiRem",
-        headline: "From meeting the plumber to making an enquiry.",
+        headline: "From meeting the plumber to making an enquiry",
         text: "A business website for a plumber in Kirov, introducing the specialist, services, and examples of completed work. An enquiry form lets visitors describe their needs and leave contact details.",
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
@@ -210,7 +210,7 @@ const copy = {
         number: "04",
         type: "SilentCity · Digital refuge",
         title: "After the rain",
-        headline: "A city where you can slow down.",
+        headline: "A city where you can slow down",
         text: "An interactive SVG city with rain, warmly lit windows, and notes from its residents. Weather and the day–night cycle follow your chosen city. Mix 30 ambient sounds, tune into five live radio genres, or settle in with a personal notebook and focus timer. Explore the streets without the interface on mobile; animations respect reduced motion.",
         stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
         link: "https://city.maark.ru/",
@@ -220,7 +220,7 @@ const copy = {
       },
     ],
     stackKicker: "03 — Technology",
-    stackTitle: "The tool follows the problem.",
+    stackTitle: "The tool follows the problem",
     stackText:
       "I do not sell a fashionable stack. I choose technology that helps launch sooner and keeps the product easy to evolve.",
     stackGroups: [
@@ -231,7 +231,7 @@ const copy = {
       { label: "AI", items: "LLM · Agents · Automation · Integrations" },
     ],
     fitKicker: "04 — Working together",
-    fitTitle: "The best work starts with clear rules.",
+    fitTitle: "The best work starts with clear rules",
     fitCards: [
       {
         title: "A meaningful brief",

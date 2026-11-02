@@ -83,6 +83,18 @@ test("server-renders the MAARK portfolio", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
+test("renders headings and project headlines without periods", async () => {
+  const html = await (await render()).text();
+  const headings = [...html.matchAll(/<h[1-6]\b[^>]*>(.*?)<\/h[1-6]>/g)];
+  assert.ok(headings.length > 0);
+  for (const [, heading] of headings) {
+    assert.doesNotMatch(heading.replace(/<[^>]*>/g, ""), /\./);
+  }
+  const headlines = [...html.matchAll(/class="project-name"><h3>.*?<\/h3><p>(.*?)<\/p>/g)];
+  assert.equal(headlines.length, 4);
+  for (const [, headline] of headlines) assert.doesNotMatch(headline, /\./);
+});
+
 test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   const html = await (await render()).text();
   assert.doesNotMatch(html, /[↗↘↓]/u);
