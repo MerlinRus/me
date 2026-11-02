@@ -68,7 +68,9 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /href="https:\/\/rentalall\.ru\/"/);
   assert.doesNotMatch(html, /dev\.rentalall\.ru/);
   assert.match(html, /QobuzSync/);
+  assert.match(html, /href="https:\/\/github\.com\/MerlinRus\/import-tracks-from-YaMusic-to-Qobuz"/);
   assert.match(html, /ПрофиРем/);
+  assert.match(html, /href="https:\/\/github\.com\/MerlinRus\/Santehnik"/);
   assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);
   assert.equal((html.match(/class="project-card"/g) ?? []).length, 4);
   assert.match(html, /После дождя/);
@@ -98,7 +100,7 @@ test("renders headings and project headlines without periods", async () => {
 test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   const html = await (await render()).text();
   assert.doesNotMatch(html, /[↗↘↓]/u);
-  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 16);
+  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 18);
 });
 
 test("renders two identical ticker groups with the extended skill labels", async () => {

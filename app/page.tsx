@@ -68,6 +68,8 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Открыть продукт",
+        sourceLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
+        sourceText: "GitHub · QobuzSync",
       },
       {
         number: "03",
@@ -78,6 +80,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
         linkText: "Открыть сайт",
+        sourceLink: "https://github.com/MerlinRus/Santehnik",
+        sourceText: "GitHub · ПрофиРем",
       },
       {
         number: "04",
@@ -195,6 +199,8 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Open product",
+        sourceLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
+        sourceText: "GitHub · QobuzSync",
       },
       {
         number: "03",
@@ -205,6 +211,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
         linkText: "Visit website",
+        sourceLink: "https://github.com/MerlinRus/Santehnik",
+        sourceText: "GitHub · ProfiRem",
       },
       {
         number: "04",
