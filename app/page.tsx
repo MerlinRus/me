@@ -68,8 +68,8 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Открыть продукт",
-        sourceLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
-        sourceText: "GitHub · QobuzSync",
+        secondaryLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
+        secondaryText: "GitHub · QobuzSync",
       },
       {
         number: "03",
@@ -80,8 +80,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
         linkText: "Открыть сайт",
-        sourceLink: "https://github.com/MerlinRus/Santehnik",
-        sourceText: "GitHub · ПрофиРем",
+        secondaryLink: "https://github.com/MerlinRus/Santehnik",
+        secondaryText: "GitHub · ПрофиРем",
       },
       {
         number: "04",
@@ -92,8 +92,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
         link: "https://city.maark.ru/",
         linkText: "Открыть город",
-        sourceLink: "https://github.com/MerlinRus/SilentCity",
-        sourceText: "GitHub · SilentCity",
+        secondaryLink: "https://github.com/MerlinRus/SilentCity",
+        secondaryText: "GitHub · SilentCity",
       },
       {
         number: "05",
@@ -104,6 +104,8 @@ const copy = {
         stack: ["JavaScript", "Chrome Extensions", "Manifest V3"],
         link: "https://chromewebstore.google.com/detail/separate-window/fhcafcdfknddjfgbbkhpglgamceiclcm?hl=ru",
         linkText: "Открыть в Chrome Web Store",
+        secondaryLink: "https://separate.maark.ru/",
+        secondaryText: "Сайт проекта",
       },
     ],
     stackKicker: "03 — Технологии",
@@ -209,8 +211,8 @@ const copy = {
         stack: ["Python", "SQLite", "Redis", "React"],
         link: "https://qobuz.rentalall.ru",
         linkText: "Open product",
-        sourceLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
-        sourceText: "GitHub · QobuzSync",
+        secondaryLink: "https://github.com/MerlinRus/import-tracks-from-YaMusic-to-Qobuz",
+        secondaryText: "GitHub · QobuzSync",
       },
       {
         number: "03",
@@ -221,8 +223,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript"],
         link: "https://profirem-kirov.ru/",
         linkText: "Visit website",
-        sourceLink: "https://github.com/MerlinRus/Santehnik",
-        sourceText: "GitHub · ProfiRem",
+        secondaryLink: "https://github.com/MerlinRus/Santehnik",
+        secondaryText: "GitHub · ProfiRem",
       },
       {
         number: "04",
@@ -233,8 +235,8 @@ const copy = {
         stack: ["HTML", "CSS", "JavaScript", "SVG", "Web Audio API", "Open-Meteo"],
         link: "https://city.maark.ru/",
         linkText: "Explore the city",
-        sourceLink: "https://github.com/MerlinRus/SilentCity",
-        sourceText: "GitHub · SilentCity",
+        secondaryLink: "https://github.com/MerlinRus/SilentCity",
+        secondaryText: "GitHub · SilentCity",
       },
       {
         number: "05",
@@ -245,6 +247,8 @@ const copy = {
         stack: ["JavaScript", "Chrome Extensions", "Manifest V3"],
         link: "https://chromewebstore.google.com/detail/separate-window/fhcafcdfknddjfgbbkhpglgamceiclcm?hl=en",
         linkText: "View in Chrome Web Store",
+        secondaryLink: "https://separate.maark.ru/",
+        secondaryText: "Project website",
       },
     ],
     stackKicker: "03 — Technology",
@@ -463,9 +467,9 @@ export default function Home() {
                   {project.linkText}
                   <ArrowIcon />
                 </a>
-                {"sourceLink" in project && (
-                  <a href={project.sourceLink} target="_blank" rel="noreferrer">
-                    {project.sourceText}
+                {"secondaryLink" in project && (
+                  <a href={project.secondaryLink} target="_blank" rel="noreferrer">
+                    {project.secondaryText}
                     <ArrowIcon />
                   </a>
                 )}

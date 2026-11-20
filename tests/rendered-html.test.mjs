@@ -74,6 +74,7 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);
   assert.equal((html.match(/class="project-card"/g) ?? []).length, 5);
   assert.match(html, /<h3>Separate Window<\/h3>/);
+  assert.match(html, /href="https:\/\/separate\.maark\.ru\/"/);
   assert.match(html, /href="https:\/\/chromewebstore\.google\.com\/detail\/separate-window\/fhcafcdfknddjfgbbkhpglgamceiclcm\?hl=ru"/);
   assert.match(html, /После дождя/);
   assert.match(html, /href="https:\/\/city\.maark\.ru\/"/);
@@ -102,7 +103,7 @@ test("renders headings and project headlines without periods", async () => {
 test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   const html = await (await render()).text();
   assert.doesNotMatch(html, /[↗↘↓]/u);
-  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 19);
+  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 20);
 });
 
 test("renders two identical ticker groups with the extended skill labels", async () => {
