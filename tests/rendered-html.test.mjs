@@ -72,7 +72,9 @@ test("server-renders the MAARK portfolio", async () => {
   assert.match(html, /ПрофиРем/);
   assert.match(html, /href="https:\/\/github\.com\/MerlinRus\/Santehnik"/);
   assert.match(html, /href="https:\/\/profirem-kirov\.ru\/"/);
-  assert.equal((html.match(/class="project-card"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="project-card"/g) ?? []).length, 5);
+  assert.match(html, /<h3>Separate Window<\/h3>/);
+  assert.match(html, /href="https:\/\/chromewebstore\.google\.com\/detail\/separate-window\/fhcafcdfknddjfgbbkhpglgamceiclcm\?hl=ru"/);
   assert.match(html, /После дождя/);
   assert.match(html, /href="https:\/\/city\.maark\.ru\/"/);
   assert.match(html, /href="https:\/\/github\.com\/MerlinRus\/SilentCity"/);
@@ -93,14 +95,14 @@ test("renders headings and project headlines without periods", async () => {
     assert.doesNotMatch(heading.replace(/<[^>]*>/g, ""), /\./);
   }
   const headlines = [...html.matchAll(/class="project-name"><h3>.*?<\/h3><p>(.*?)<\/p>/g)];
-  assert.equal(headlines.length, 4);
+  assert.equal(headlines.length, 5);
   for (const [, headline] of headlines) assert.doesNotMatch(headline, /\./);
 });
 
 test("renders arrow icons as SVG instead of emoji-capable text", async () => {
   const html = await (await render()).text();
   assert.doesNotMatch(html, /[↗↘↓]/u);
-  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 18);
+  assert.equal((html.match(/<svg class="arrow-icon"/g) ?? []).length, 19);
 });
 
 test("renders two identical ticker groups with the extended skill labels", async () => {
